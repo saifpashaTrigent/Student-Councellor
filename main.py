@@ -2,8 +2,7 @@ from student_councellor.tools import StoriesTool,CommentsTool,ContentTool
 import asyncio
 from PIL import Image
 import streamlit as st
-from langchain.agents import AgentType
-from langchain.agents import initialize_agent
+from langchain.agents import AgentType,initialize_agent
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.memory import StreamlitChatMessageHistory
@@ -50,7 +49,7 @@ stop = False
 if api_key:
     success_message_html = """
     <span style='color:green; font-weight:bold;'>✅ Powering the Chatbot using Open AI's 
-    <a href='https://platform.openai.com/docs/models/gpt-3-5' target='_blank'>gpt-3.5-turbo-0613 model</a>!</span>
+    <a href='https://platform.openai.com/docs/models/gpt-3-5' target='_blank'>gpt-4o model</a>!</span>
     """
 
     # Display the success message with the link
@@ -117,7 +116,7 @@ if len(msgs.messages) == 0:
     msgs.add_ai_message(
         "Hello there, I am the Ai Career councellor. How can I help you?")
 
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613",
+llm = ChatOpenAI(temperature=0, model="gpt-4o",
                  openai_api_key=openai_api_key)
 agent_kwargs = {
     "system_message": system_message,
