@@ -43,7 +43,7 @@ async def generate_response(question):
     result = await open_ai_agent.arun(question)
     return result
 
-st.title("Ai carrer councellor 👩🏻‍🏫")
+st.header("Ai carrer councellor 👩🏻‍🏫")
 stop = False
 
 if api_key:
@@ -66,7 +66,7 @@ else:
 
 
 st.markdown("""
-# *Ask me about* :
+### Ask me about :
 1. **Top colleges in your state.**
 2. **Top courses to pursue based on your academics.**
 3. **What educational and certification paths should I consider for career advancement?**
